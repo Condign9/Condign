@@ -7,24 +7,12 @@ rates = website["rates"]
 rates.update({"EUR": 1})
 
 
-def key1_check():
+def key_check(currency):
     import re
     rates = website["rates"]
     rates.update({"EUR": 1})
     rates = json.dumps(rates)
-    if not re.search(yourCurrency, rates):
-        raise Exception(
-            "This is not a currency")
-    else:
-        rates = json.loads(rates)
-
-
-def key2_check():
-    import re
-    rates = website["rates"]
-    rates.update({"EUR": 1})
-    rates = json.dumps(rates)
-    if not re.search(exchangeCurrency, rates):
+    if not re.search(currency, rates):
         raise Exception(
             "This is not a currency")
     else:
@@ -34,7 +22,7 @@ def key2_check():
 while True:
     try:
         yourCurrency = input("Which currency do you have?: ").upper()
-        key1_check()
+        key_check(yourCurrency)
     except Exception as error:
         print(error)
     else:
@@ -53,7 +41,7 @@ while True:
     try:
         exchangeCurrency = input(
             "Which currency would you like to buy?: ").upper()
-        key2_check()
+        key_check(exchangeCurrency)
     except Exception as error:
         print(error)
     else:
