@@ -51,4 +51,4 @@ while True:
 newMoney = (float(rates[exchangeCurrency]) /
             float(rates[yourCurrency]))*float(yourMoney)
 
-print(f"You have: {newMoney} {exchangeCurrency}")
+print("You have:", "%.2f" % newMoney, exchangeCurrency)
