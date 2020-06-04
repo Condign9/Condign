@@ -1,5 +1,6 @@
 import requests
 import json
+import re
 
 website = requests.get("https://api.exchangeratesapi.io/latest")
 website = json.loads(website.text)
@@ -8,7 +9,6 @@ rates.update({"EUR": 1})
 
 
 def key_check(currency):
-    import re
     rates = website["rates"]
     rates.update({"EUR": 1})
     rates = json.dumps(rates)
