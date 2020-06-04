@@ -20,6 +20,7 @@ def key_check(currency):
 
 
 while True:
+    print(rates)
     try:
         yourCurrency = input("Which currency do you have?: ").upper()
         key_check(yourCurrency)
@@ -38,6 +39,7 @@ while True:
 
 
 while True:
+    print(rates)
     try:
         exchangeCurrency = input(
             "Which currency would you like to buy?: ").upper()
